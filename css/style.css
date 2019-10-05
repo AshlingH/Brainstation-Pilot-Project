@@ -1,0 +1,223 @@
+html, body {
+    margin: 0;
+    font-size: 90%;
+}
+
+body, * {
+    box-sizing: border-box;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+body.component-example {
+    padding: 3rem;
+}
+
+body.component-example,
+body.component-example > * {
+    margin: 0 auto;
+    display: block;
+}
+
+body.component-example h1 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+body.component-example .card {
+    max-width: 21rem;
+}
+
+.wrapper {
+    margin: 0 auto;
+    overflow: auto;
+    max-width: 70rem;
+    padding: 0 2rem;
+}
+
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    min-height: 15rem;
+}
+
+.content .card {
+    width: calc(33% - 1.5rem);
+}
+/* Your code starts here */
+
+/* --- Component: Button ----*/
+.btn {
+  color: black;
+  padding: 12px 24px;
+  font-size: 16px;
+  background-color: #F9D160;
+  font-weight: 600;
+  border-radius: 20px;
+  border-style: none;
+  transition: all .15s ease;
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+}
+
+.btn:hover {
+  cursor: pointer;
+  box-shadow: 0px 3px 12px rgba(0,0,0, .2);
+}
+
+.btn:active {
+  color: black;
+  box-shadow: 0px 3px 4px rgba(0,0,0, .2);
+}
+
+.btn a {
+  color: black;
+  text-decoration: none;
+}
+
+/* --- Component: Title ----*/
+.title {
+  text-transform: lowercase;
+  font-size: 24px;
+  margin: 8px 0;
+  font-weight: bold;
+}
+
+/* --- Component: Intro ----- */
+.intro {
+  padding: 32px 0;
+}
+
+/* --- Component: Card ----*/
+.card {
+  border: 3px solid black;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 4px 8px rgba(0,0,0, .2);
+  position: relative;
+}
+
+.card .category {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  color: black;
+  text-decoration: none;
+}
+
+.card .description {
+  margin-bottom: 32px;
+}
+
+.card.image-card {
+  padding: 0;
+  border: none;
+  overflow: hidden;
+}
+
+.image-card .image {
+  width: 100%;
+  text-align: center;
+}
+@media (min-width: 1200px) {
+  .image-card .image {
+    width: initial;
+    height: 100%;
+  }
+}
+
+.card .btn {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+}
+
+/* - Component: Header/Footer -*/
+.header {
+  border-bottom: 1px solid darkgray;
+}
+
+.footer {
+  border-top: 1px solid darkgray;
+}
+
+.header .wrapper,
+.footer .wrapper {
+  padding: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav li {
+  display: inline-block;
+}
+
+.nav:not(.mobile-nav) li:not(.btn) {
+  display:none;
+}
+
+.mobile-nav-wrapper {
+  width:100%
+}
+
+.mobile-nav-wrapper ul{
+  display:flex;
+  justify-content: space-around;
+}
+@media (min-width: 820px) {
+  .nav:not(.mobile-nav) li:not(.btn) {
+    display: inline-block;
+  }
+  .mobile-nav-wrapper{
+    display: none;
+  }
+}
+
+.nav li a {
+  padding: 8px 12px;
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+#logo,
+.logo {
+  height: 48px;
+}
+
+/* ---- Component: Grid ----- */
+
+.grid .card {
+  width: calc(96% / 1);
+  height: 340px;
+  margin-bottom: 16px;
+}
+
+@media (min-width: 812px) {
+  .grid{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .grid .card:not(.image-card) {
+    width: calc(96%/ 3);
+  }
+  .grid .image-card {
+    width: calc(96% / 2);
+  }
+}
+@media ( min-width: 1200px) {
+  .grid .image-card {
+    width: calc(96% / 3);
+  }
+}
+
+@media ( min-width: 1600px) {
+  .grid .image-card {
+    width: calc(96% / 4);
+  }
+}
